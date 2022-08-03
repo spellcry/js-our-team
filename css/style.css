@@ -6,3 +6,26 @@
 }
 
 /* #endregion Regole Reset */
+
+/* #region Regole Layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    height: 100vh;
+    margin-inline: auto;
+}
+
+/* #endregion Regole Layout */
+
+/* #region Team */
+.team {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style-type: none;
+}
+
+/* #endregion Team */
