@@ -1,8 +1,24 @@
+/* #region Root */
+:root {
+    --gap: 20px;
+}
+
+/* #endregion Root */
+
 /* #region Regole Reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+img {
+    display: block;
+    width: 100%;
 }
 
 /* #endregion Regole Reset */
@@ -14,8 +30,23 @@
     justify-content: center;
     align-items: center;
     max-width: 1000px;
-    height: 100vh;
     margin-inline: auto;
+    padding: 50px 10px;
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.text {
+    max-width: 600px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+    line-height: 1.8;
 }
 
 /* #endregion Regole Layout */
@@ -23,9 +54,44 @@
 /* #region Team */
 .team {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 60px var(--gap);
     list-style-type: none;
 }
 
 /* #endregion Team */
+
+/* #region Member */
+.member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 100%;
+}
+
+.member__img {
+    margin-bottom: 20px;
+}
+
+.member__name {
+    margin-bottom: 5px;
+}
+
+.member__name,
+.member__role {
+    color: #888;
+}
+
+@media (min-width: 500px) {
+    .member {
+        flex-basis: calc(calc(100% - var(--gap)) / 2);
+    }
+}
+
+@media (min-width: 768px) {
+    .member {
+        flex-basis: calc(calc(100% - var(--gap) * 2) / 3);
+    }
+}
+
+/* #endregion Member */
