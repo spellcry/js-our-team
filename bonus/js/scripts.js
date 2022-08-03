@@ -15,12 +15,23 @@ function stampaMembroConsole(membro) {
 
 // funzione che crea un elemento li
 function createLiElement(membro) {
-    return `<li>Nome: ${membro.nome} Ruolo: ${membro.ruolo} Foto: ${membro.foto}</li>`;
+    const liEl = document.createElement('li');
+    liEl.innerHTML = `Nome: ${membro.nome} Ruolo: ${membro.ruolo}`;
+    liEl.append(createImgElement(membro.foto));
+    console.log(liEl)
+    return liEl;
+}
+
+// funzione che crea un tag img con stringa foto passata come parametro
+function createImgElement(imageString) {
+    const imgEl = document.createElement('img');
+    imgEl.src = `./img/${imageString}`;
+    return imgEl;
 }
 
 // funzione che aggiunge un membro in un elemento destinazione
 function addElementTo(elementoDestinazione, membro) {
-    elementoDestinazione.innerHTML += createLiElement(membro);
+    elementoDestinazione.append(createLiElement(membro));
 }
 
 const teamEl = document.querySelector('.team');
