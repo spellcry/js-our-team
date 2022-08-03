@@ -1,3 +1,4 @@
+// funzione che crea un mebro del team
 function creaMembro(nome, ruolo, foto) {
     const membro = {
         nome: nome,
@@ -5,6 +6,11 @@ function creaMembro(nome, ruolo, foto) {
         foto: foto
     };
     return membro;
+}
+
+// funzione che stampa un membro su console
+function stampaMembro(membro) {
+    console.log(`Nome: ${membro.nome} Ruolo: ${membro.ruolo} Foto: ${membro.foto}`);
 }
 
 const team = [
@@ -15,3 +21,7 @@ const team = [
     creaMembro('Scott Estrada', 'Developer', 'scott-estrada-devoloper.jpg'),
     creaMembro('Barbara Ramos', 'Gaphic Designer', 'barbara-ramos-graphic-designer.jpg')
 ];
+
+team.forEach((membro) => {
+    stampaMembro(membro);
+});
